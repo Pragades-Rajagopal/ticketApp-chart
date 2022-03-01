@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <title>TicketApp - Graph</title>
+</head>
+<body>
+    <h1 style="text-align: center;">TICKET CATEGORIZATION PAGE</h1>
+    <div style="padding-top: 50px; padding-bottom: 70px; padding-left: 200px; padding-right: 200px;">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div style= "padding-bottom: 50px; padding-left: 200px; padding-right: 200px;">
+        <canvas id="myChart1"></canvas>
+    </div>
+    <script>
+        
+        const ctx = document.getElementById("myChart").getContext("2d");
+        let delayed2;
+
+        let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, "rgba(58, 123, 213, 1");
+        gradient.addColorStop(1, "rgba(255, 0, 0, 0.6");
+
+        const data = {
+            labels: {{ labels_inc | safe }},
+            datasets: [{
+                data: {{ values_inc | safe }},
+                label: "Count",
+                fill: true,
+                backgroundColor: gradient,
+                borderColor: "#fff",
+                pointBackgroundColor: "rgb(189,195,199)",
+            },],
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Incident'
+                    },
+                    legend: {
+                        position: 'right',
+                    }
+                },
+                radius: 5,
+                hitRadius: 30,
+                hoverRadius: 15,
+                responsive: true,
+                animation: {
+                    onComplete: () => {
+                        delayed=true;
+                    },
+                    delay: (context) => {
+                        let delay = 0;
+                        if (context.type === "data" && context.mode === "default" && !delayed2) {
+                            delay = context.dataIndex * 200 + context.datasetIndex * 100;
+                        }
+                        return delay;
+                    },
+                },
+                scales: {
+                    xAxes: [{
+                            ticks: {
+                                size: 20
+                            }
+                    }],                       
+                }
+            },
+        };
+
+        const myChart = new Chart(ctx, config);
+
+        let delayed1;
+
+        let gradient1 = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient1.addColorStop(0, "rgba(60, 255, 255, 1");
+        gradient1.addColorStop(1, "rgba(0, 255, 0, 0.6");
+
+        const ctx1 = document.getElementById("myChart1").getContext("2d");
+
+        const data1 = {
+            labels: {{ labels_sr | safe }},
+            datasets: [{
+                data: {{ values_sr | safe }},
+                label: "Count",
+                fill: true,
+                backgroundColor: gradient1,
+                borderColor: "#fff",
+                pointBackgroundColor: "rgb(189,195,199)",
+            },],
+        };
+
+        const config1 = {
+            type: 'bar',
+            data: data1,
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Service Request'
+                    },
+                    legend: {
+                        position: 'right',
+                    }
+                },
+                radius: 5,
+                hitRadius: 30,
+                hoverRadius: 15,
+                responsive: true,
+                animation: {
+                    onComplete: () => {
+                        delayed=true;
+                    },
+                    delay: (context) => {
+                        let delay = 0;
+                        if (context.type === "data" && context.mode === "default" && !delayed1) {
+                            delay = context.dataIndex * 200 + context.datasetIndex * 100;
+                        }
+                        return delay;
+                    },
+                },
+                scales: {
+                    
+                        xAxes: [{
+                            ticks: {
+                                fontSize: 400
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                stepSize: 1
+                            },
+                    }]
+                    
+                }
+            },
+        };
+
+        const myChart1 = new Chart(ctx1, config1);
+    </script>    
+</body>
+</html>

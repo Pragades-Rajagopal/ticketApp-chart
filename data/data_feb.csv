@@ -1,0 +1,10 @@
+"RESOLUTION","TICKET_COUNT","TICKET_TYPE","MONTH"
+Charge Transfer - SECS Change order,1,Incident,Feb2022
+Supplier/Customer Migration/Numbering Plan Change Request,2,Service Request,Feb2022
+Backend Update - LM Speed,1,Service Request,Feb2022
+Backend Update - Toll-Free number removal/Order Elimination for Optimus Orders,1,Service Request,Feb2022
+Order closure - XML Failure,2,Incident,Feb2022
+User Request - Script/Data Extract,1,Service Request,Feb2022
+Application Latency - Multi user sessions,2,Incident,Feb2022
+Backend Update - PM Basket Approval,1,Service Request,Feb2022
+Charge Transfer - Retrigger charges,2,Incident,Feb2022
