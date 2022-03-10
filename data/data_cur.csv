@@ -1,0 +1,4 @@
+RESOLUTION,TICKET_COUNT,TICKET_TYPE,MONTH
+Order closure - XML Failure,1,Incident,Mar2022
+Bill Start Date Update for Data Orders,1,Service Request,Mar2022
+Backend Update - Toll-Free number removal/Order Elimination for Optimus Orders,1,Service Request,Mar2022

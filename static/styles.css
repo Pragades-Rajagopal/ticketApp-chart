@@ -1,0 +1,32 @@
+.header, .sub-header {
+    text-align: center;
+}
+
+.sub-header {
+    text-decoration: underline;
+}
+
+.chart1 {
+    padding-top: 50px; 
+    padding-bottom: 70px; 
+    padding-left: 200px; 
+    padding-right: 200px;
+}
+
+.chart2 {
+    padding-bottom: 50px; 
+    padding-left: 200px; 
+    padding-right: 200px;
+}
+
+.links {
+    text-decoration: none;
+    color: salmon;
+    font-size: 18px;
+    padding-right: 8px;
+    text-transform: uppercase;
+}
+
+.apps {
+    color: slateblue;
+}

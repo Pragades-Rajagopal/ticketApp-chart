@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script rel="" src="{{url_for('static', filename='/chart.js')}}"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='/styles.css')}}">
-    <link rel="shortcut icon" href="{{url_for('static', filename='/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{url_for('static', filename='/favicon.png')}}">
     <title>TicketApp - Graph</title>
 </head>
 <body>
-    <a class="links" href="/graph/curMonth">Graph for current month</a> 
+    <a class="links" href="/graph/prevMonth">Graph for previous month</a> 
     <a class="links apps" href="http://localhost:9191/ticket-tool">Ticket Tool</a>
     <h1 class="header">TICKET CATEGORIZATION PAGE</h1>
-    <h2 class="sub-header">Showing graph for {{prevMon}}</h2>
+    <h2 class="sub-header">Showing graph for {{curMon}}</h2>
     <div class="chart1">
         <canvas id="myChart"></canvas>
     </div>
@@ -149,6 +149,6 @@
         };
 
         const myChart1 = new Chart(ctx1, config1);
-    </script>    
+    </script>
 </body>
 </html>
